@@ -1,6 +1,7 @@
 import { AsyncStorage } from 'react-native'
 import axios from 'axios'
-import { BASE_URI } from '../api'
+
+const BASE_URI = `https://store-locator.stamplayapp.com`
 
 export function login (credentials) {
 	return axios(`${BASE_URI}/auth/v1/local/login`, {

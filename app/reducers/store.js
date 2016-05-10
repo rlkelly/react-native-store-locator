@@ -2,8 +2,7 @@ import * as actions from '../actions/store'
 
 const initialState = {
 	locations: [],
-	current: {},
-	pagination: {}
+	current: {}
 }
 
 export default function store (state = initialState, action) {
@@ -11,8 +10,7 @@ export default function store (state = initialState, action) {
 		case actions.SET_STORES :
 			return {
 				...state,
-				locations:action.stores,
-				pagination:action.pagination
+				locations:action.stores
 			}
 		case actions.SET_CURRENT :
 			return {

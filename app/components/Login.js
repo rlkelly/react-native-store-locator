@@ -26,19 +26,18 @@ class Login extends Component {
         return (
             <View style={styles.container}>
                 <TextInput
-                style={styles.input}
-                placeholder='Email'
-                autoCapitalize='none'
-                onChangeText={(email) => this.setState({ ...this.state, email })}
-                value={this.state.email} />
+                    style={styles.input}
+                    placeholder='Email'
+                    autoCapitalize='none'
+                    onChangeText={(email) => this.setState({ ...this.state, email })}
+                    value={this.state.email} />
                 <TextInput
-                style={styles.input}
-                placeholder='Password'
-                autoCapitalize='none'
-                onChangeText={(password) => this.setState({...this.state, password})}
-                value={this.state.password} />
+                    style={styles.input}
+                    placeholder='Password'
+                    autoCapitalize='none'
+                    onChangeText={(password) => this.setState({...this.state, password})}
+                    value={this.state.password} />
                 <Button containerStyle={styles.btn} style={styles.btnText} onPress={this.handlePress}>Submit</Button>
-                <Text>{this.props.error}</Text>
             </View>
             )
     }
@@ -83,10 +82,7 @@ var styles = StyleSheet.create({
 });
 
 export default connect(
-    (state) => ({
-        user: state.account.user,
-        error: state.account.error
-    }),
+    (state) => ({}),
     (dispatch) => (bindActionCreators(accountActions, dispatch)),
 )(Login)
 

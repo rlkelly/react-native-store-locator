@@ -1,3 +1,7 @@
+// Api Methods
+import { geocodeCoordinates } from '../api/location'
+
+// Action types
 export const SET_LOCATION = "SET_LOCATION"
 export const SET_LOCATION_ERROR = "SET_LOCATION_ERROR"
 
@@ -15,21 +19,17 @@ function setLocationError (error) {
 	}
 }
 
-let locationOptions = {
-  enableHighAccuracy: true,
-  timeout: 20000,
-  maximumAge: 1000
-}
-
 export function getAndSetCurrentLocation () {
 	return function (dispatch) {
 		return navigator.geolocation.getCurrentPosition(
-      ({ coords: { longitude, latitude } }) => {
-      	dispatch(setLocation({ longitude, latitude }))
-      	dispatch(setLocationError(''))
-      },
+      ({coords}) => dispatch(setLocation(coords)),
       (error) => dispatch(setLocationError(error.message)),
-      locationOptions
+      {
+			  enableHighAccuracy: true,
+			  timeout: 20000,
+			  maximumAge: 1000
+			}
     )
 	}
 }
+
