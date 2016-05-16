@@ -1,5 +1,3 @@
-import * as actions from '../actions/store'
-
 const initialState = {
 	locations: [],
 	current: {}
@@ -7,15 +5,15 @@ const initialState = {
 
 export default function store (state = initialState, action) {
 	switch (action.type) {
-		case actions.SET_STORES :
+		case 'SET_STORES' :
 			return {
 				...state,
-				locations:action.stores
+				locations :action.stores
 			}
-		case actions.SET_CURRENT :
+		case 'SET_CURRENT' :
 			return {
 				...state,
-				current:action.current,
+				current: action.current,
 			}
 		default :
 			return state

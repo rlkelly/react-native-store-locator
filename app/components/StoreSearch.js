@@ -9,7 +9,7 @@ export default function StoreSearch (props) {
 				style={styles.input}
 				onChangeText={props.handleInputChange} />
 			<Text style={styles.storeCount}>
-				{props.storeCount} stores found within {props.distance || 500} miles.
+				{props.storeCount} stores found within {props.distance || '500'} miles.
 			</Text>
 		</View>
 	)

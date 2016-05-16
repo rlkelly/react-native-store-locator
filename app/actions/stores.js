@@ -1,24 +1,30 @@
-// API methods
-import { fetchStores } from '../api/store'
-import { geocodeCoordinates } from '../api/location'
-
-// Action types
-export const SET_STORES = 'SET_STORES'
-export const SET_CURRENT = 'SET_CURRENT'
-
+import RNGeocoder from 'react-native-geocoder'
+import { fetchStores } from '../api/stores'
 
 function setStores (stores) {
 	return {
-		type: SET_STORES,
+		type: 'SET_STORES',
 		stores,
 	}
 }
 
 function setCurrent (current) {
 	return {
-		type: SET_CURRENT,
+		type: 'SET_CURRENT',
 		current,
 	}
+}
+
+function geocodeCoordinates (coordinates) {
+	return new Promise((resolve, reject) => {
+		RNGeocoder.reverseGeocodeLocation({
+			longitude: coordinates[0],
+			latitude: coordinates[1]
+		}, function(err, [data, ...rest]) {
+			if(err) reject(err)
+			resolve(data)
+		})
+	}) 
 }
 
 export function fetchAndSetStores (distance) {

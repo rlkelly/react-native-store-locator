@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Actions } from 'react-native-router-flux'
-import * as storeActions from '../actions/store'
+import * as storeActions from '../actions/stores'
 import Button from 'react-native-button'
 import { StoreMap, StoreDetails } from '../components'
 

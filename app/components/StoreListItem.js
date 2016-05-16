@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 export default function StoreListItem (props) {
+	console.log(props)
 	return (
 		<TouchableOpacity
 			key={props.idx} 

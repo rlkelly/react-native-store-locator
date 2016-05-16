@@ -15,6 +15,6 @@ let {height, width} = Dimensions.get('window')
 var styles = StyleSheet.create({
 	map :{
 		width:width,
-		height:200
+		height:height / 2
 	},
 })

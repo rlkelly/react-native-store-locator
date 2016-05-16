@@ -1,36 +1,37 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import Button from 'react-native-button'
 import { Actions } from 'react-native-router-flux'
+import Button from 'react-native-button'
 
 export default function UserActions (props) {
 	return (
 		<View style={styles.container}>
-			<Button disabled={props.disabled} styleDisabled={styles.btnDisabled} containerStyle={[styles.btn, styles.bgGreen]} style={styles.btnText} onPress={Actions.stores}>Stores Near Me</Button>
-			<Button containerStyle={[styles.btn, styles.bgDark]} style={styles.btnText} onPress={props.handleLogout}>Logout</Button>
+			<Button
+				style={styles.btnText}
+				containerStyle={[styles.btn, styles.bgGreen]}
+				onPress={Actions.stores}>Stores Near Me</Button>
+			<Button
+				style={styles.btnText} 
+				containerStyle={[styles.btn, styles.bgDark]}
+				onPress={props.handleLogout}>Logout</Button>
 		</View>
 	)
 }
 
 var styles = StyleSheet.create({
 	btnText: {
-		textAlign: "center",
-		color: "#f2f2f2",
-		marginBottom: 5,
+		color: "#f2f2f2"
 	},
-	btn : {
+	btn: {
 		width:200,
-		paddingTop:6,
-		paddingRight:5,
-		paddingLeft:5,
-		paddingBottom:2,
+		padding:8,
 		borderRadius:6,
-		margin:7
+		margin:8
 	},
-	bgGreen : {
+	bgGreen: {
 		backgroundColor:"#2ecc71",
 	},
-	bgDark : {
+	bgDark: {
 		backgroundColor:"#333",
 	},
 	btnDisabled:{

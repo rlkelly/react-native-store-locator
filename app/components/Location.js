@@ -15,11 +15,6 @@ export default function Location (props) {
 }
 
 var styles = StyleSheet.create({
-	address : {
-		fontSize:11,
-		textAlign:"center",
-		color:"#aaa"
-	},
 	errorMsg : {
 		fontSize: 11,
 		color: "#bbb",

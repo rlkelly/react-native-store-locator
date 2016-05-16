@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, View, Text, StyleSheet } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import * as storeActions from '../actions/stores'
 import { Actions } from 'react-native-router-flux'
-import * as storeActions from '../actions/store'
-import {
-	StoreListItem,
-	StoreSearch
-} from '../components'
+import { StoreListItem, StoreSearch } from '../components'
 
 class StoreList extends Component {
-	 constructor() {
+	constructor() {
     super()
     this.state = {
     	distance: 500,
@@ -29,23 +26,21 @@ class StoreList extends Component {
 	onStoreSelect = (store) => {
 		this.props.setCurrentStore(store)
 			.then(() => Actions.details())	
-			.catch(() => alert("Opps, something didn't work correclty! Try again."))
+			.catch(() => alert("Opps, something didn't work correctly! Try again."))
 	}
 
-  onUpdateDistance = (distance) => {
-
+	onUpdateDistance = (distance) => {
   	this.setState({
-  		...this.state,
-  		storeCount: "Loading"
-  	})
-
-  	this.props.fetchAndSetStores(distance)
-  		.then(() => this.setState({
-  			...this.state,
-  			distance,
-  			storeCount:this.props.stores.length
-  		}))	
-  }
+			...this.state,
+			storeCount: "Loading"
+		})
+		this.props.fetchAndSetStores(distance)
+			.then(() => this.setState({
+				...this.state,
+				distance,
+				storeCount:this.props.stores.length
+			}))	
+	}
 
 	render () {
 		return (
@@ -83,5 +78,5 @@ var styles = StyleSheet.create({
 
 export default connect(
 	(state) => ({ stores: state.store.locations }),
-	(dispatch) => (bindActionCreators(storeActions, dispatch)),
-)(StoreList)
+	(dispatch) => (bindActionCreators(storeActions, dispatch))
+	)(StoreList)

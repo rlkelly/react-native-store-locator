@@ -1,5 +1,5 @@
-import { AsyncStorage } from 'react-native'
 import axios from 'axios'
+import { AsyncStorage } from 'react-native'
 
 const BASE_URI = `https://store-locator.stamplayapp.com`
 
@@ -17,10 +17,6 @@ export function signup (credentials) {
 	})
 }
 
-export function revokeAuth () {
-	return AsyncStorage.removeItem('stamplay-user') 
-}
-
 export function setAuth ({ headers, data }) {
 	AsyncStorage.setItem('stamplay-user', headers['x-stamplay-jwt'])
 	return data
@@ -28,6 +24,10 @@ export function setAuth ({ headers, data }) {
 
 export function checkAuth () {
 	return AsyncStorage.getItem('stamplay-user')
+}
+
+export function revokeAuth () {
+	return AsyncStorage.removeItem('stamplay-user') 
 }
 
 export function currentUser (token) {
@@ -40,4 +40,3 @@ export function currentUser (token) {
 		}
 	})
 }
-
