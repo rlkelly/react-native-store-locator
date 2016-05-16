@@ -1,4 +1,3 @@
-<style>img, pre { box-shadow: 0px 1px 1px 1px rgba(100,100,100,0.2);</style>
 
 # Building a Store Locator with React Native
 
@@ -2182,7 +2181,7 @@ Adding prop validation with `React.PropTypes` to your components will allow for 
 
 React, React Native, Redux and the ecosystem of it all can be overwhelming at times, but in my experience my developer experience using React has been much better than other experiences I've had with frontend stacks.
 
-If you are looking to level up in a big way, I would take a deep dive [React.js Program](http://www.reactjsprogram.com/). The course is a modular, linear approach from [Tyler Mcginnis](https://twitter.com/tylermcginnis33), who is an excellent instructor.
+If you are looking to level up in a big way, I would take a deep dive into [React.js Program](http://www.reactjsprogram.com/). The course is a modular, linear approach from [Tyler Mcginnis](https://twitter.com/tylermcginnis33), who is an excellent instructor.
 
 It is by far my favorite course so far.
 
