@@ -2190,3 +2190,4 @@ Thank you for sticking with me this far, and I hope you learned a thing or two, 
 Cheers!
 
 
+react-native bundle --entry-file index.ios.js --platform ios --dev true --bundle-output './.app/main.js' --assets-dest './.app'
