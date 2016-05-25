@@ -663,9 +663,8 @@ export default function Routes () {
 
 Now we can see our login and signup views.
 
-| | |
-|-|-|
-|![Login Screen](./images/login_screen.png)|![Signup Screen](./images/signup_screen.png)|
+
+![Login Screen](./images/login_screen.png)  ![Signup Screen](./images/signup_screen.png)
 
 Next let's add Redux actions and a few methods that will make our requests to Stamplay to add, and authenticate users accounts.
 
